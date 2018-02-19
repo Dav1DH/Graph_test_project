@@ -1,0 +1,9 @@
+svg g.links line {
+  stroke: #999!important;
+  stroke-opacity: 0.6!important;
+}
+
+.nodes circle {
+  stroke: #fff!important;
+  stroke-width: 1.5px!important;
+}
