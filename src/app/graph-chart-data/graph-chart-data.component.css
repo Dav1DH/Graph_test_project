@@ -1,0 +1,12 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 50%;
+}
+
+.m-t-15{
+  margin-top: 15px!important;
+}

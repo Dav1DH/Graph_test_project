@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-sm-12">
+    <button class="btn btn-primary" (click)="saveData()">Save Data</button>
+  </div>
+</div>
+<div class="row m-t-15">
+  <div class="col-sm-6" >
+    <div class="col-sm-12">
+      <button class="btn btn-success" (click)="addNode()">Add Node data</button>
+      <hr>
+    </div>
+    <div *ngFor="let dat of data.nodes; let i = index">
+      <p>Node {{ i+1 }}</p>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="nodeId">Node Id</label>
+          <input class="form-control" (change)="editNodeId(dat.id,i)" placeholder="Node Id" id="nodeId" name="nodeId" [(ngModel)]="dat.id">
+        </div>
+        <div class="col-sm-6">
+          <label for="nodeGroup">Node Group</label>
+          <input class="form-control" placeholder="Node Group" id="nodeGroup" name="nodeGroup" [(ngModel)]="dat.group">
+        </div>
+      </div>
+      <div class="col-sm-12 m-t-15">
+        <button class="btn btn-danger" (click)="removeNode(dat.id, i)">Remove Node</button>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="col-sm-12">
+      <button class="btn btn-success" (click)="addLink()">Add Link data</button>
+      <hr>
+    </div>
+    <div *ngFor="let dat of data.links; let i = index">
+      <p>Link {{ i+1 }}</p>
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="linksSource">Links Source</label>
+          <input class="form-control" placeholder="Node Source" id="linksSource" name="linksSource" [(ngModel)]="dat.source">
+        </div>
+        <div class="col-sm-4">
+          <label for="linksTarget">Links Target</label>
+          <input class="form-control" placeholder="Node Target" id="linksTarget" name="linksTarget" [(ngModel)]="dat.target">
+        </div>
+        <div class="col-sm-4">
+          <label for="nodeValue">Links Value</label>
+          <input class="form-control" placeholder="Node Value" id="nodeValue" name="nodeValue" [(ngModel)]="dat.value">
+        </div>
+      </div>
+      <div class="row m-t-15">
+        <button class="btn btn-danger" (click)="removeLnk(i)">Remove Link</button>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+
