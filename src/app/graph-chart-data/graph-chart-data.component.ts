@@ -30,11 +30,17 @@ export class GraphChartDataComponent implements OnInit {
   ngOnInit() {
     this.dataService.getDatas().subscribe( res => {
       if ( !res.error) {
-        this.data = res.data[0];
-        for (let i = 0; i < res.data[0].nodes.length; i++) {
-          this.nodeNames[i] = res.data[0].nodes[i].id;
-          console.log("nodes:" , this.nodeNames[i]);
-
+        if(res.data[0].nodes){
+          this.data = res.data[0];
+          for (let i = 0; i < res.data[0].nodes.length; i++) {
+            this.nodeNames[i] = res.data[0].nodes[i].id;
+            console.log("nodes:" , this.nodeNames[i]);
+          }
+        } else {
+          for (let i = 0; i < this.data.nodes.length; i++) {
+            this.nodeNames[i] = this.data.nodes[i].id;
+            console.log("nodes:" , this.nodeNames[i]);
+          }
         }
       }
     });

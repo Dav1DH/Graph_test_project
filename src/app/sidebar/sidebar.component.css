@@ -1,3 +1,7 @@
 .example-container{
   height: 500px;
 }
+.mat-drawer-content{
+
+  overflow-x: hidden!important;
+}
